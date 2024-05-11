@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sign Up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+
+      </head>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background-color: #2596be;
+      }
+.back1 .wave
+{
+  position: absolute;
+  bottom:auto;
+  left:auto;
+  width:100%;
+  height: 100px;
+  background : url(wave.png);
+  position: fixed;
+}
+.back1 .wave.wave1
+{
+  animation: animate 30s linear infinite;
+  z-index: 1000;
+  opacity: 1;
+  animation-delay: 0s;
+  bottom : 0;
+
+}
+.back1 .wave.wave2
+{
+  animation: animate2 15s linear infinite;
+  z-index: 999;
+  opacity: 0.5;
+  animation-delay: -5s;
+  bottom : 10px;
+
+}
+.back1 .wave.wave3
+{
+  animation: animate 15s linear infinite;
+  z-index: 998;
+  opacity: 0.2;
+  animation-delay: -2s;
+  bottom : 15px;
+
+}
+.back1 .wave.wave4
+{
+  animation: animate2 5s linear infinite;
+  z-index: 997;
+  opacity: 0.7;
+  animation-delay: -5s;
+  bottom : 20px;
+
+}
+@keyframes animate
+{
+   0%
+   {
+    background-position-x :0;
+   }
+    100%
+   {
+    background-position-x :1000px;
+   }
+
+}
+@keyframes animate2
+{
+   0%
+   {
+    background-position-x :0;
+   }
+    100%
+   {
+    background-position-x :-1000px;
+   }
+
+}
+
+      .container {
+
+
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        height: auto;
+        background-color: rgba(255,255,255,0.13);
+        background-image: url('boy-swim.png');
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-position: left;
+        
+      }
+      #form1 h3{
+font-size: 32px;
+ 
+line-height: 32px;
+text-align: center;
+}
+
+    .form-container {
+        
+        
+        width: 100%;
+        max-width: 500px;
+        margin-bottom: 6rem;
+        margin-top: 2rem;
+        padding: 2rem;
+        background-color: rgba(255, 255, 255, 0.13);
+          border-radius: 10px;
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255,255,255,0.1);
+        box-shadow: 0 0 40px rgba(8,7,16,0.6);
+        padding: 40px 40px;     
+       font-family: 'Poppins',sans-serif;
+       letter-spacing: 0.5px;
+       color: black;
+       font-weight: 500;
+
+
+
+
+     }
+
+
+     
+  .form-container label{
+    display: block;
+    margin-top: 30px;
+    font-size: 16px;
+    font-weight: 500;
+
+    }
+
+
+      .form-container input,
+      .form-container select {
+           display: block;
+    height: 50px;
+    width: 100%;
+    background-color: rgba(255,255,255,0.07);
+    /*border-radius: 3px;
+*/    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    
+    border: none;
+
+        /*padding: 0.5rem;
+        border: none;
+        border-radius: 0.5rem;
+        background-color: rgba(255, 255, 255, 0.5);
+        font-size: 1.2rem;
+        width: 100%;
+        margin-bottom: 1rem;
+        box-shadow: inset 0 0 0.3rem rgba(0, 0, 0, 0.2);
+        transition: box-shadow 0.2s;*/
+      }
+   
+      .form-container input:focus,
+      .form-container select:focus {
+        outline: none;
+        box-shadow: inset 0 0 0.5rem rgba(0, 0, 0, 0.3),
+          0 0 0.5rem rgba(0, 0, 0, 0.1);
+      }
+
+      .form-container input[type="submit"] {
+        background-color: #6c63ff;
+        color: #fff;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.2s;
+      }
+
+      .form-container input[type="submit"]:hover {
+        background-color: #5148c7;
+      }
+
+      /*.image-container {
+        width: 100%;
+        max-width: 500px;
+        height: 100vh;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 1rem;
+        overflow: hidden;
+      }*/
+      ::placeholder{
+    color: black;
+    opacity: 0.8;
+}
+
+
+      @media only screen and (min-width: 768px) {
+        .form-container {
+          margin-right: 2rem;
+        }
+
+        .image-container {
+          margin-left: 2rem;
+        }
+      }
+.error{
+  /* margin-top: 10px; */
+  color: #af0c0c;
+  background-color: #ffe0e0;
+  padding: 8px;
+  display: none;
+} 
+     </style>
+  <body>
+    <section class="back1">
+  <div class="wave wave1"> </div>
+  <div class="wave wave2"> </div>
+  <div class="wave wave3"> </div>
+  <div class="wave wave4"> </div>
+    <div class="container">
+      <div class="form-container">
+        <form id="form1" name="form1" action="db_connect.php"  onsubmit="return validate()" method="Post" autocomplete="off">
+        <h3>Enroll Here</h3>
+
+          <label id="new1"  for="username"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username"  id="user_name" name="user_name">
+                    
+          <label id="new1"  for="forename"><b>Forename</b></label>
+          <input type="text" placeholder="Enter Forename" id="forename" name="forename">
+
+          <label id="new1"  for="surname"><b>Surname</b></label>
+          <input type="text" placeholder="Enter Surname" id="surname" name="surname">
+
+          <label id="new1"  for="password"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" id="password" name="password">
+          
+          <label id="new1"  for="date_of_birth"><b>Date of Birth</b></label>
+          <input type="date" placeholder="Enter Date of Birth" id="date_of_birth" name="date_of_birth">
+
+          <label id="new1"  for="email_address"><b>Email Address</b></label>
+          <input type="email" placeholder="Enter Email" id="email_address" name="email_address">
+
+          <label id="new1"  for="telephone_number"><b>Telephone Number</b></label>
+          <input type="tel" placeholder="Enter Telephone number" id="telephone_number" name="telephone_number">
+
+        <label id="new1"  for="address"><b>Address</b></label>
+        <input type="text" placeholder="Enter Address" id="address" name="address">
+
+        <label id="new1"  for="post_code"><b>Post Code</b></label>
+        <input type="text" placeholder="Enter Post Code" id="post_code" name="post_code">
+
+         <label id="new1"  for="role"><b>Role</b></label>
+      <select id="role" name="role">
+        <option value="parent">Parent</option>
+        <option value="swimmer">Swimmer</option>
+      </select><br>
+
+      <input type="submit" value="Submit" name="submit">
+    
+  
+    </form>
+<script type="text/javascript">
+  function validate() {
+  let User_Name = document.forms["form1"]["user_name"].value;
+  if (User_Name.length<2) {
+    alert("Enter Your Full User_Name")
+    return false;
+  }
+   let Fore_Name = document.forms["form1"]["forename"].value;
+  if (Fore_Name=="") {
+    alert("Enter Your Forename")
+    return false;
+  }
+  let Sur_Name = document.forms["form1"]["surname"].value;
+  if (Sur_Name=="") {
+    alert("Enter Your Surname")
+    return false;
+  }
+
+  let Password= document.forms["form1"]["password"].value;
+  if(Password.length<7){
+    alert("Enter a Valid Password")
+    return false;
+  }
+  let Date_of_birth= document.forms["form1"]["date_of_birth"].value;
+  if(Date_of_birth==""){
+    alert("Enter a Date_of_birth")
+    return false;
+  }
+  let Email= document.forms["form1"]["email_address"].value;
+  if(Email=="") {
+    alert("Enter a Valid Email Address")
+    return false;
+  }
+
+   let Telephone_number=document.forms["form1"]["telephone_number"].value;
+   if(Telephone_number.length!=10){
+     alert(" Please Enter a Valid Telephone Number")
+     return false;
+   }
+  let Address=document.forms["form1"]["address"].value;
+  if(Address==""){
+    alert("please Enter Your Address")
+    return false;
+  }
+  let Post_code=document.forms["form1"]["post_code"].value;
+  if(Post_code.length!=6){
+    alert(" Please Enter a Valid Post Code")
+    return false;
+  }
+   alert("welcome user")
+  return true;
+  }
+
+</script>
+      </body>
+</html>
